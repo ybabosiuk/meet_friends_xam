@@ -1,0 +1,4 @@
+meetfriends.MainActivity, meetfriends;md5b0a2233cf3334434833727b9432ade82.MainActivity
+meetfriends.MainActivity, meetfriends, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5b0a2233cf3334434833727b9432ade82.MainActivity
+meetfriends.MainActivity;md5b0a2233cf3334434833727b9432ade82.MainActivity
+meetfriends.MainActivity;md5b0a2233cf3334434833727b9432ade82.MainActivity

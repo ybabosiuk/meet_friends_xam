@@ -1,0 +1,17 @@
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/MonoAndroid,Version=v4.4.AssemblyAttribute.cs
+/Users/babosiuk/Projects/meetfriends/meetfriends/bin/Debug/meetfriends.dll.mdb
+/Users/babosiuk/Projects/meetfriends/meetfriends/bin/Debug/meetfriends.dll
+/Users/babosiuk/Projects/meetfriends/meetfriends/bin/Debug/com.companyname.meetfriends.apk
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/android/bin/com.companyname.meetfriends.apk
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/res/layout/main.xml
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/res/values/strings.xml
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/res/mipmap-hdpi/icon.png
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/res/mipmap-mdpi/icon.png
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/res/mipmap-xhdpi/icon.png
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/res/mipmap-xxhdpi/icon.png
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/res/mipmap-xxxhdpi/icon.png
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/R.cs.flag
+/Users/babosiuk/Projects/meetfriends/meetfriends/bin/Debug/com.companyname.meetfriends-Signed.apk
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/uploadflags.txt
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/meetfriends.dll
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/meetfriends.dll.mdb

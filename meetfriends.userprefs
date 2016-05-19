@@ -1,0 +1,13 @@
+﻿<Properties StartupItem="meetfriends/meetfriends.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Xamarin_Android_API_15" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="meetfriends/MainActivity.cs">
+    <Files>
+      <File FileName="meetfriends/MainActivity.cs" Line="16" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.meetfriends AndroidDesignerPreferredDevice="Nexus 4" />
+</Properties>

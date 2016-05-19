@@ -1,0 +1,8 @@
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/assemblies/meetfriends.dll
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/assemblies/System.dll
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/assemblies/System.Xml.dll
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/assemblies/Mono.Android.dll
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/assemblies/System.Core.dll
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/assemblies/mscorlib.dll
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/assemblies/System.Runtime.Serialization.dll
+/Users/babosiuk/Projects/meetfriends/meetfriends/obj/Debug/assemblies/System.ServiceModel.Internals.dll
