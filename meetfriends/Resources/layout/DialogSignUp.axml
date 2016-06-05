@@ -31,10 +31,10 @@
         android:paddingLeft="10dp"
         android:textColor="#000" />
     <EditText
+        android:id="@+id/txtPassword"
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:id="@+id/txtPassword"
         android:background="@drawable/edittextstyle"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"

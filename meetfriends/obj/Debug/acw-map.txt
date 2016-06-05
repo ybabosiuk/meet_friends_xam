@@ -2,3 +2,11 @@ meetfriends.MainActivity, meetfriends;md5b0a2233cf3334434833727b9432ade82.MainAc
 meetfriends.MainActivity, meetfriends, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5b0a2233cf3334434833727b9432ade82.MainActivity
 meetfriends.MainActivity;md5b0a2233cf3334434833727b9432ade82.MainActivity
 meetfriends.MainActivity;md5b0a2233cf3334434833727b9432ade82.MainActivity
+meetfriends.DialogSignUp, meetfriends;md5b0a2233cf3334434833727b9432ade82.DialogSignUp
+meetfriends.DialogSignUp, meetfriends, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5b0a2233cf3334434833727b9432ade82.DialogSignUp
+meetfriends.DialogSignUp;md5b0a2233cf3334434833727b9432ade82.DialogSignUp
+meetfriends.DialogSignUp;md5b0a2233cf3334434833727b9432ade82.DialogSignUp
+meetfriends.DialogSignIn, meetfriends;md5b0a2233cf3334434833727b9432ade82.DialogSignIn
+meetfriends.DialogSignIn, meetfriends, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5b0a2233cf3334434833727b9432ade82.DialogSignIn
+meetfriends.DialogSignIn;md5b0a2233cf3334434833727b9432ade82.DialogSignIn
+meetfriends.DialogSignIn;md5b0a2233cf3334434833727b9432ade82.DialogSignIn

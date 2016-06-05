@@ -23,14 +23,13 @@ using Newtonsoft.Json.Converters;
 using RestSharp.Portable.Deserializers;
 using System.Diagnostics;
 using System.Net.Sockets;
-using RestSharp.Portable.HttpClient;
 
 namespace LBXamarinSDK
 {
 	// Gateway: Communication with Server API
 	public class Gateway
     {
-		private static Uri BASE_URL = new Uri("http://0.0.0.0:3000/api/");
+        private static Uri BASE_URL = new Uri("http://192.168.0.101:3001/api/");
 		private static RestClient _client = new RestClient {BaseUrl = BASE_URL};
         private static string _accessToken = null;
 		private static bool _debugMode = false;
@@ -52,7 +51,7 @@ namespace LBXamarinSDK
                 };
             }
 
-			public T Deserialize<T>(IRestResponse response)
+            public T Deserialize<T>(IRestResponse response)
             {
                 var type = typeof(T);
                 var rawBytes = response.RawBytes;
@@ -140,7 +139,7 @@ namespace LBXamarinSDK
 			_cts.Token.ThrowIfCancellationRequested();
 			try
 			{
-				var request = new RestRequest ("/", Method.GET);
+				var request = new RestRequest ("/", new HttpMethod ("GET"));
 				var response = await _client.Execute<JObject>(request, _cts.Token).ConfigureAwait(false);
 				if (response != null)
 				{
@@ -197,7 +196,7 @@ namespace LBXamarinSDK
         public static async Task<T> PerformRequest<T>(string APIUrl, string json, string method = "POST", IDictionary<string, string> queryStrings = null)
 		{
 			RestRequest request = null;
-			request = new RestRequest(APIUrl, Method.GET);
+            request = new RestRequest(APIUrl, new HttpMethod(method));
 
             if(_debugMode)
                 Debug.WriteLine("-------- >> DEBUG: Performing " + method + " request at URL: '" + _client.BuildUri(request) + "', Json: " + (string.IsNullOrEmpty(json) ? "EMPTY" : json));
@@ -708,7 +707,7 @@ namespace LBXamarinSDK
 			/*
 			 * No description given.
 			 */
-			public static async Task<Array> getNearestEvents(string userId = default(string), string from = default(string), string to = default(string))
+			public static async Task<List<Event>> getNearestEvents(string userId = default(string), string from = default(string), string to = default(string))
 			{
 				string APIPath = "events/nearestEvents";
 				IDictionary<string, string> queryStrings = new Dictionary<string, string>();
@@ -717,7 +716,8 @@ namespace LBXamarinSDK
 				queryStrings.Add("from", from != null ? from.ToString() : null);
 				queryStrings.Add("to", to != null ? to.ToString() : null);
 				var response = await Gateway.PerformRequest<object>(APIPath, bodyJSON, "GET", queryStrings).ConfigureAwait(false);
-				return JObject.Parse(response.ToString()).First.First.ToObject<Array>();
+				return JObject.Parse(response.ToString()).First.First.ToObject<List<Event>>();
+
 			}
 
 			/*
@@ -1302,14 +1302,14 @@ namespace LBXamarinSDK
 			/*
 			 * Login a user with username/email and password.
 			 */
-			public static async Task<JObject> login(User credentials, string include = default(string))
+			public static async Task<User> login(User credentials, string include = default(string))
 			{
 				string APIPath = "users/login";
 				IDictionary<string, string> queryStrings = new Dictionary<string, string>();
 				string bodyJSON = "";
 				bodyJSON = JsonConvert.SerializeObject(credentials);
 				queryStrings.Add("include", include != null ? include.ToString() : null);
-				var response = await Gateway.PerformRequest<JObject>(APIPath, bodyJSON, "POST", queryStrings).ConfigureAwait(false);
+				var response = await Gateway.PerformRequest<User>(APIPath, bodyJSON, "POST", queryStrings).ConfigureAwait(false);
 				return response;
 			}
 

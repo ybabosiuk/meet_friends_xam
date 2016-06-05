@@ -8,6 +8,8 @@ using System;
 using LBXamarinSDK;
 using LBXamarinSDK.LBRepo;
 using System.Threading;
+using Android.Views;
+using Newtonsoft.Json;
 
 namespace meetfriends
 {
@@ -16,6 +18,8 @@ namespace meetfriends
 	{
 
 		private Button mBtnSingUp; 
+		private ProgressBar mProgressBar;
+		private Button mBtnSingIn;
 
 		protected override void OnCreate (Bundle savedInstanceState)
 		{
@@ -24,36 +28,71 @@ namespace meetfriends
 //			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 
-//			mBtnSingUp = FindViewById<Button> (Resource.Id.btnSignUp);
-//
-//			mBtnSingUp.Click += (object sender, EventArgs e) => {
-//				//Pull up dialog
-//				FragmentTransaction transaction = FragmentManager.BeginTransaction();
-//				DialogSignUp signUpDialog = new DialogSignUp();
-//				signUpDialog.Show(transaction, "Dialog Fragment");
-//			};
+			mBtnSingIn = FindViewById<Button> (Resource.Id.btnSignIn);
+			mBtnSingUp = FindViewById<Button> (Resource.Id.btnSignUp);
+			mProgressBar = FindViewById<ProgressBar> (Resource.Id.progressBar1);
 
-//			LBXamarinSDK.Gateway getaway = new Gateway ();
-//			Console.WriteLine(Gateway.isConnected (10)); 
-//
-			var event1 = new Event () {
-				title = "string",
-				from = Convert.ToDateTime("2016-05-20T00:00:00.000Z"),
-				to = Convert.ToDateTime("2016-05-20T00:00:00.000Z"),
-				description = "string",
-				type = "string",
-				id = "573eb110a207e7bf086b6b05",
-				userId = "573eac451a7e152a08ccb914"
+			mBtnSingUp.Click += (object sender, EventArgs e) => {
+				//Pull up dialog
+				FragmentTransaction transaction = FragmentManager.BeginTransaction();
+				DialogSignUp signUpDialog = new DialogSignUp();
+				signUpDialog.Show(transaction, "Dialog Fragment");
+
+				signUpDialog.mOnSignUpComplete += SignUpDialog_mOnSignUpComplete;
+
 			};
 
+			mBtnSingIn.Click += (object sender, EventArgs e) => {
+				//Pull up dialog
+				FragmentTransaction transaction = FragmentManager.BeginTransaction();
+				DialogSignIn signInDialog = new DialogSignIn();
+				signInDialog.Show(transaction, "Dialog Fragment");
 
-			Gateway.SetDebugMode (true);
-			Console.WriteLine ("test1");
-			//Console.WriteLine(Events.Count ().ToString());
-			Console.WriteLine(LBXamarinSDK.Gateway.isConnected().ToString());
-			Console.WriteLine ("test");
+				signInDialog.mOnSignInComplete += SignInDialog_mOnSignInComplete;
+
+			};
+
+		}
+
+		void SignUpDialog_mOnSignUpComplete (object sender, OnSignUpEventArgs e)
+		{
+			Console.WriteLine (e.Email);
+			Console.WriteLine (e.Password);
+
+			mProgressBar.Visibility = ViewStates.Visible;
+
+			Thread thread = new Thread(RequestMethod);
+			thread.Start ();
+
+		}
 
 
+		async void SignInDialog_mOnSignInComplete (object sender, OnSignInEventArgs e)
+		{
+			Console.WriteLine (e.Email);
+			Console.WriteLine (e.Password);
+
+			mProgressBar.Visibility = ViewStates.Visible;
+
+			var credentials = new LBXamarinSDK.User ();
+			credentials.email = e.Email;
+			credentials.password = e.Password;
+			
+			mProgressBar.Visibility = ViewStates.Visible;
+			credentials = await Users.login (credentials);
+		
+			mProgressBar.Visibility = ViewStates.Invisible;
+		
+			Console.WriteLine("end");
+		}
+
+
+		private void RequestMethod(){
+			Thread.Sleep (3000);
+
+			RunOnUiThread (() => {
+				mProgressBar.Visibility = ViewStates.Invisible;
+			});
 
 		}
 

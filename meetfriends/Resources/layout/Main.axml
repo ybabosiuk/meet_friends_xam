@@ -52,6 +52,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/progressBar1"
             android:indeterminate="true"
-            android:indeterminateDrawable="@drawable/progressbarstyle" />
+            android:indeterminateDrawable="@drawable/progressbarstyle"
+            xmlns:tools="http://schemas.android.com/tools"
+            tools:visibility="invisible" />
     </RelativeLayout>
 </LinearLayout>
